@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
 import Accounts from './accounts';
+import { Link, withRouter } from 'react-router-dom';
 
 class Header extends  Component {
 
 	onBinClick(event) {
 		event.preventDefault();
-		Meteor.call('bins.insert');
+		Meteor.call('bins.insert',(error,binId) => {
+			this.props.history.push(`/bins/${binId}`);
+		});
 	}
 
 	render() {
 		return (
 			<nav className="nav navbar-default">
 				<div className="navbar-header">
-					<a className="navbar-brand">Markbin</a>
+					<Link to="/" className="navbar-brand">Markbin</Link>
 				</div>
 				<ul className="nav navbar-nav">
 					<li>
@@ -27,4 +30,4 @@ class Header extends  Component {
 	}
 }
 
-export default Header;
+export default withRouter(Header);
