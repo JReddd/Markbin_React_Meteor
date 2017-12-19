@@ -6,3 +6,26 @@
 .list-group-item{
 	height: 55px;
 }
+
+.bin-share{
+	position: absolute;
+	top: 700px;
+	width: 100%;
+	display:flex;
+	align-items: center;
+	margin: 10px;
+}
+
+.bin-share .input-group{
+	width: 30%;
+}
+
+.bin-share > div {
+	margin: 0 10px;
+}
+
+.CodeMirror {
+	height: 500px;
+}
+
+
